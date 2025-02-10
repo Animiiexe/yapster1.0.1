@@ -30,45 +30,73 @@ export default function SignUp({ setUser, socket }) {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-6">
-      <Card className="w-full max-w-md shadow-lg rounded-2xl  bg-black
- text-white">
-        <CardHeader className="flex items-center gap-4 p-6">
-          <Image alt="Yapster" height={50} radius="sm" src="favicon.ico" width={50} className="animate-pulse" />
-          <div className="flex flex-col">
-            <p className="text-2xl font-semibold">Yapster</p>
-            <p className="text-sm text-gray-400">A sleek chat experience</p>
+    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black p-6 overflow-hidden">
+      <div className="absolute inset-[-350px] flex flex-wrap items-center justify-center transform -rotate-45">
+        {[...Array(12)].map((_, row) => (
+          <div key={row} className="flex w-full justify-around">
+            {[...Array(8)].map((_, col) => (
+              <p key={col} className="text-[6rem] font-extrabold text-gray-700 opacity-20 select-none tracking-widest uppercase">
+                YAPSTER
+              </p>
+            ))}
           </div>
-        </CardHeader>
+        ))}
+      </div>
+      <Card className="relative w-full max-w-md rounded-lg bg-gray-900 text-white border border-gray-800 shadow-2xl shadow-blue-500/20">
+  <CardHeader className="p-4">
+    <div className="flex flex-row items-center justify-center gap-3">
+      <Image
+        alt="Yapster"
+        height={50}
+        radius="sm"
+        src="favicon.ico"
+        width={50}
+        className="animate-pulse"
+      />
+      <div className="flex flex-col items-center">
+        <p className="text-2xl font-bold text-white">Yapster</p>
+        <p className="text-sm text-gray-400">A sleek chat experience</p>
+      </div>
+    </div>
+  </CardHeader>
 
-        <Divider className="border-gray-700" />
+  <Divider className="border-gray-800" />
 
-        <CardBody className="p-6">
-          <Form onSubmit={onSubmit} validationBehavior="native" className="space-y-4">
-            <Input
-              isRequired
-              errorMessage="Please enter a name"
-              
-              labelPlacement="outside"
-              name="name"
-              placeholder="Enter your name"
-              type="text"
-              autoComplete="off" labelClassName="text-gray-400"
-            />
-            <Button type="submit" className="w-full bg-white hover:bg-blue-600 transition-all flex items-center justify-center gap-2 py-3 rounded-lg font-medium">
-              Join <ChevronRightIcon size={18} />
-            </Button>
-          </Form>
-        </CardBody>
+  <CardBody className="p-6">
+    <Form onSubmit={onSubmit} validationBehavior="native" className="space-y-4">
+      <Input
+        isRequired
+        errorMessage="Please enter a name"
+        labelPlacement="outside"
+        name="name"
+        placeholder="Enter your name"
+        type="text"
+        autoComplete="off"
+        className="bg-gray-800 text-white rounded-lg text-base font-medium transition-all"
+      />
+      <Button
+        type="submit"
+        className="w-full"
+        color="primary" variant="ghost"
+      >
+        Join <ChevronRightIcon size={18} />
+      </Button>
+    </Form>
+  </CardBody>
 
-        <Divider className="border-gray-700" />
+  <Divider className="border-gray-800" />
 
-        <CardFooter className="p-6 text-center">
-          <Link isExternal showAnchorIcon href="https://discord.com/invite/lordxoxo" className="text-blue-400 hover:underline">
-            Visit source code on GitHub
-          </Link>
-        </CardFooter>
-      </Card>
+  <CardFooter className="p-4 text-center">
+    <Link
+      isExternal
+      showAnchorIcon
+      href="https://github.com/Animiiexe"
+      className="text-blue-400 hover:text-blue-300 transition-all font-semibold"
+    >
+      Visit source code on GitHub
+    </Link>
+  </CardFooter>
+</Card>
     </div>
   );
 }
