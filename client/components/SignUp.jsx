@@ -64,7 +64,7 @@ export default function SignUp({ setUser, socket }) {
         <Divider className="border-gray-700" />
 
         <CardFooter className="p-6 text-center">
-          <Link isExternal showAnchorIcon href="https://github.com/Animiiexe" className="text-blue-400 hover:underline">
+          <Link isExternal showAnchorIcon href="https://discord.com/invite/lordxoxo" className="text-blue-400 hover:underline">
             Visit source code on GitHub
           </Link>
         </CardFooter>
