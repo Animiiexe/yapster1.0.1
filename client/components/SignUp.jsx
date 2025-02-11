@@ -31,10 +31,15 @@ export default function SignUp({ setUser, socket }) {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black p-6 overflow-hidden">
-      <div className="absolute inset-[-350px] flex flex-wrap items-center justify-center transform -rotate-45">
+      <div className="absolute inset-[-350px] flex flex-wrap items-center justify-center transform -rotate-45 overflow-hidden whitespace-nowrap ">
         {[...Array(12)].map((_, row) => (
-          <div key={row} className="flex w-full justify-around">
-            {[...Array(8)].map((_, col) => (
+          <div key={row}
+          className={`flex w-full overflow-hidden ${
+            row % 2 === 0
+              ? "animate-scroll-horizontal" // Even rows: left to right
+              : "animate-scroll-horizontal-reverse" // Odd rows: right to left
+          }`}>
+            {[...Array(18)].map((_, col) => (
               <p key={col} className="text-[6rem] font-extrabold text-gray-700 opacity-20 select-none tracking-widest uppercase">
                 YAPSTER
               </p>

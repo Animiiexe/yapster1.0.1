@@ -14,6 +14,22 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      keyframes: {
+       "scroll-horizontal": {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(100%)" }, // Move left fully
+        },
+        "scroll-horizontal-reverse": {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" }, // Move right fully
+        },
+      },
+      animation: {
+        'scroll-horizontal': 'scroll-horizontal 200s linear infinite',
+        'scroll-horizontal-reverse': 'scroll-horizontal-reverse 200s linear infinite'
+        
+      },
+      
     },
   },
   darkMode: "class",
