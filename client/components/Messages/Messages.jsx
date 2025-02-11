@@ -6,13 +6,13 @@ export default function Messages({ messages, id }) {
 
   useEffect(() => {
     if (scrollRef.current) {
-      scrollRef.current.scrollIntoView({ behaviour: "smooth" });
+      scrollRef.current.scrollIntoView({ behavior: "smooth" }); // Fixed typo in "behavior"
     }
   }, [messages]);
 
   return (
-    <div className="container mx-auto pt-5 min-h-[90vh] max-h-[90vh] overflow-scroll scrollbar-hidden px-5 py-3">
-      <section className="flex gap-1 flex-col">
+    <div className="container mx-auto pt-5 min-h-[85vh] max-h-[85vh] overflow-auto overscroll-contain px-3 sm:px-5 py-3 scrollbar-hidden">
+      <section className="flex flex-col gap-2">
         {messages.map((message, index) => (
           <Chat
             key={index}
@@ -24,7 +24,7 @@ export default function Messages({ messages, id }) {
         ))}
       </section>
 
-      <div className="auto-scroll" ref={scrollRef}></div>
+      <div ref={scrollRef} className="h-1"></div>
     </div>
   );
 }
