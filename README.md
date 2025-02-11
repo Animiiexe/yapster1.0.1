@@ -20,7 +20,7 @@ A real-time chat application built with **React, Tailwind CSS, and Socket.io**, 
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/chat-app.git
+   git clone https://github.com/Animiiexe/yapster1.0.1.git
    cd chat-app
    ```
    
