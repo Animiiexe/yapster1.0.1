@@ -40,7 +40,7 @@ export default function SignUp({ setUser, socket }) {
               : "animate-scroll-horizontal-reverse" // Odd rows: right to left
           }`}>
             {[...Array(18)].map((_, col) => (
-              <p key={col} className="text-[6rem] font-extrabold text-gray-700 opacity-15 select-none tracking-widest uppercase">
+              <p key={col} className="text-[6rem] font-extrabold text-gray-600 opacity-20 select-none tracking-widest uppercase">
                 YAPSTER
               </p>
             ))}

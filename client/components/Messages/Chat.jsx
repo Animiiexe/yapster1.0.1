@@ -3,7 +3,7 @@ import Image from "next/image";
 import NewUser from "./NewUser";
 
 export default function Chat({ content, own, type, name }) {
-  const isAI = name === "AI"; // Detect AI messages
+  const isAI = name === "AI"; 
 
   return (
     <Card
@@ -19,15 +19,15 @@ export default function Chat({ content, own, type, name }) {
         {/* Avatar */}
         {!own && (
           <Avatar
-          name={isAI ? "AI" : name?.slice(0, 1).toUpperCase() || "?"}
-          className={`w-8 h-8 text-white ${isAI ? "bg-blue-400" : "bg-blue-500"}`}
+          name={isAI ? "AI" : name?.slice(0, 1).toUpperCase()}
+          className={`w-8 h-8 text-white ${isAI ? "bg-red-400" : "bg-blue-500"}`}
         />        
         )}
 
         <div className="flex flex-col">
           {/* Name (for non-AI messages) */}
           {!isAI && !own && <span className="text-sm font-semibold mb-1">
-    {name?.charAt(0).toUpperCase() + name?.slice(1).toLowerCase() || "Unknown"}
+    {name?.charAt(0).toUpperCase() + name?.slice(1).toLowerCase()}
   </span>}
 
           {/* New User Notification */}
